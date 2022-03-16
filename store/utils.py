@@ -9,7 +9,7 @@ def cookieCart(request):
         cart = {}
 
     items = []
-    order = { 'get_cart_total':0, 'get_cart_item': 0}
+    order = { 'get_cart_total':0, 'get_cart_item': 0, 'shipping': False }
     cartItems = order['get_cart_item']
 
     for i in cart:

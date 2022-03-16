@@ -58,7 +58,7 @@
               <div class="col-lg-6 text-lg-end">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb justify-content-lg-end mb-0 px-0 bg-light">
-                    <li class="breadcrumb-item"><a class="text-dark" href="{% url 'home' %}">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-dark" href="#">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Shop</li>
                   </ol>
                 </nav>
@@ -173,7 +173,7 @@
                   <div class="col-lg-4 col-sm-6">
                     <div class="product text-center">
                       <div class="mb-3 position-relative">
-                        <div class="badge text-white bg-"></div><a class="d-block" href="{% url 'detail' product.id   %}"><img class="img-fluid w-100" src="{{product.imageUrl}}" alt="..."></a>
+                        <div class="badge text-white bg-"></div><a class="d-block" href="#"><img class="img-fluid w-100" src="{{product.imageUrl}}" alt="..."></a>
                         <div class="product-overlay">
                           <ul class="mb-0 list-inline">
                             <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#!"><i class="far fa-heart"></i></a></li>
@@ -182,7 +182,7 @@
                           </ul>
                         </div>
                       </div>
-                      <h6> <a class="reset-anchor" href="{% url 'detail' product.id   %}">{{product.name}}</a></h6>
+                      <h6> <a class="reset-anchor" href="#">{{product.name}}</a></h6>
                       <p class="small text-muted">${{product.price|floatformat:2}}</p>
                     </div>
                   </div>

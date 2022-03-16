@@ -6,46 +6,17 @@
    
 {% block body %}
 <body>
+
+
+  <style>
+    .hidden{
+      display: none!important;
+    }
+
+  </style>
+
     <div class="page-holder">
-      <!--  Modal -->
-      <div class="modal fade" id="productView" tabindex="-1">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content overflow-hidden border-0">
-            <button class="btn-close p-4 position-absolute top-0 end-0 z-index-20 shadow-0" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-            <div class="modal-body p-0">
-              <div class="row align-items-stretch">
-                <div class="col-lg-6 p-lg-0"><a class="glightbox product-view d-block h-100 bg-cover bg-center" style="background: url(img/product-5.jpg)" href="img/product-5.jpg" data-gallery="gallery1" data-glightbox="Red digital smartwatch"></a><a class="glightbox d-none" href="img/product-5-alt-1.jpg" data-gallery="gallery1" data-glightbox="Red digital smartwatch"></a><a class="glightbox d-none" href="img/product-5-alt-2.jpg" data-gallery="gallery1" data-glightbox="Red digital smartwatch"></a></div>
-                <div class="col-lg-6">
-                  <div class="p-4 my-md-4">
-                    <ul class="list-inline mb-2">
-                      <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
-                      <li class="list-inline-item m-0 1"><i class="fas fa-star small text-warning"></i></li>
-                      <li class="list-inline-item m-0 2"><i class="fas fa-star small text-warning"></i></li>
-                      <li class="list-inline-item m-0 3"><i class="fas fa-star small text-warning"></i></li>
-                      <li class="list-inline-item m-0 4"><i class="fas fa-star small text-warning"></i></li>
-                    </ul>
-                    <h2 class="h4">Red digital smartwatch</h2>
-                    <p class="text-muted">$250</p>
-                    <p class="text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut ullamcorper leo, eget euismod orci. Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus. Vestibulum ultricies aliquam convallis.</p>
-                    <div class="row align-items-stretch mb-4 gx-0">
-                      <div class="col-sm-7">
-                        <div class="border d-flex align-items-center justify-content-between py-1 px-3"><span class="small text-uppercase text-gray mr-4 no-select">Quantity</span>
-                          <div class="quantity">
-                            <button class="dec-btn p-0"><i class="fas fa-caret-left"></i></button>
-                            <input class="form-control border-0 shadow-0 p-0" type="text" value="1">
-                            <button class="inc-btn p-0"><i class="fas fa-caret-right"></i></button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-5"><a class="btn btn-dark btn-sm w-100 h-100 d-flex align-items-center justify-content-center px-0" href="{% url 'cart' %}">Add to cart</a></div>
-                    </div><a class="btn btn-link text-dark text-decoration-none p-0" href="#!"><i class="far fa-heart me-2"></i>Add to wish list</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    
       <div class="container">
         <!-- HERO SECTION-->
         <section class="py-5 bg-light">
@@ -66,118 +37,65 @@
             </div>
           </div>
         </section>
-        <section class="py-5" id="shipping-form">
+        <section class="py-5" i>
           <!-- BILLING ADDRESS-->
-          <h2 class="h5 text-uppercase mb-4">Billing details</h2>
-          <div class="row" id = 'shipping-form'>
+          
+          <div class="row">
             <div class="col-lg-8">
-              <form action="#">
+              <div class="box-element" id="form-wrapper">
+              <form id="form">
                 <div class="row gy-3">
-                  <div class="col-lg-6">
-                    <label class="form-label text-sm text-uppercase" for="firstName">First name </label>
-                    <input class="form-control form-control-lg" type="text" id="firstName" placeholder="Enter your first name">
-                  </div>
-                  <div class="col-lg-6">
-                    <label class="form-label text-sm text-uppercase" for="lastName">Last name </label>
-                    <input class="form-control form-control-lg" type="text" id="lastName" placeholder="Enter your last name">
-                  </div>
-                  <div class="col-lg-6">
-                    <label class="form-label text-sm text-uppercase" for="email">Email address </label>
-                    <input class="form-control form-control-lg" type="email" id="email" placeholder="e.g. Jason@example.com">
-                  </div>
-                  <div class="col-lg-6">
-                    <label class="form-label text-sm text-uppercase" for="phone">Phone number </label>
-                    <input class="form-control form-control-lg" type="tel" id="phone" placeholder="e.g. +02 245354745">
-                  </div>
-                  <div class="col-lg-6">
-                    <label class="form-label text-sm text-uppercase" for="company">Company name (optional) </label>
-                    <input class="form-control form-control-lg" type="text" id="company" placeholder="Your company name">
-                  </div>
-                  <div class="col-lg-6 form-group">
-                    <label class="form-label text-sm text-uppercase" for="country">Country</label>
-                    <select class="country" id="country" data-customclass="form-control form-control-lg rounded-0">
-                      <option value>Choose your country</option>
-                    </select>
-                  </div>
-                  <div class="col-lg-12">
-                    <label class="form-label text-sm text-uppercase" for="address">Address line 1 </label>
-                    <input class="form-control form-control-lg" type="text" id="address" placeholder="House number and street name">
-                  </div>
-                  <div class="col-lg-12">
-                    <label class="form-label text-sm text-uppercase" for="addressalt">Address line 2 </label>
-                    <input class="form-control form-control-lg" type="text" id="addressalt" placeholder="Apartment, Suite, Unit, etc (optional)">
-                  </div>
-                  <div class="col-lg-6">
-                    <label class="form-label text-sm text-uppercase" for="city">Town/City </label>
-                    <input class="form-control form-control-lg" type="text" id="city">
-                  </div>
-                  <div class="col-lg-6">
-                    <label class="form-label text-sm text-uppercase" for="state">State/County </label>
-                    <input class="form-control form-control-lg" type="text" id="state">
-                  </div>
-                  <div class="col-lg-6">
-                    <button class="btn btn-link text-dark p-0 shadow-0" type="button" data-bs-toggle="collapse" data-bs-target="#alternateAddress">
-                      <div class="form-check">
-                        <input class="form-check-input" id="alternateAddressCheckbox" type="checkbox">
-                        <label class="form-check-label" for="alternateAddressCheckbox">Alternate billing address</label>
+
+                      <div id="user-info" class="row gy-3">
+                                  <div class="col-lg-6">
+                                    <label class="form-label text-sm text-uppercase" for="name">Name </label>
+                                    <input class="form-control form-control-lg" type="text" id="name" placeholder="Name" required>
+                                  </div>
+                                  <div class="col-lg-6">
+                                    <label class="form-label text-sm text-uppercase" for="email">Email address </label>
+                                    <input class="form-control form-control-lg" type="email" id="email" required placeholder="e.g. Jason@example.com">
+                                  </div>
+                      </div> 
+
+
+                      <div id="shipping-info" class="row gy-3">
+                        <h2 class="h5 text-uppercase mb-4">Shipping details</h2>
+                        
+                              
+                              <div class="col-lg-12">
+                                <label class="form-label text-sm text-uppercase" for="address">Address line 1 </label>
+                                <input class="form-control form-control-lg" type="text" id="address" required placeholder="House number and street name">
+                              </div>
+                      
+                              <div class="col-lg-6">
+                                <label class="form-label text-sm text-uppercase" for="city">City </label>
+                                <input class="form-control form-control-lg" type="text" id="city" required>
+                              </div>
+                              <div class="col-lg-6">
+                                <label class="form-label text-sm text-uppercase" for="state">State </label>
+                                <input class="form-control form-control-lg" type="text" id="state" required>
+                              </div>
+                              <div class="col-lg-6">
+                                <label class="form-label text-sm text-uppercase" for="city">Zip Code </label>
+                                <input class="form-control form-control-lg" type="text" id="zipcode" required>
+                              </div>
+                              
                       </div>
-                    </button>
-                  </div>
-                  <div class="collapse" id="alternateAddress">
-                    <div class="row gy-3">
-                      <div class="col-12 mt-4">
-                        <h2 class="h4 text-uppercase mb-4">Alternative billing details</h2>
-                      </div>
-                      <div class="col-lg-6">
-                        <label class="form-label text-sm text-uppercase" for="firstName2">First name </label>
-                        <input class="form-control form-control-lg" type="text" id="firstName2" placeholder="Enter your first name">
-                      </div>
-                      <div class="col-lg-6">
-                        <label class="form-label text-sm text-uppercase" for="lastName2">Last name </label>
-                        <input class="form-control form-control-lg" type="text" id="lastName2" placeholder="Enter your last name">
-                      </div>
-                      <div class="col-lg-6">
-                        <label class="form-label text-sm text-uppercase" for="email2">Email address </label>
-                        <input class="form-control form-control-lg" type="email" id="email2" placeholder="e.g. Jason@example.com">
-                      </div>
-                      <div class="col-lg-6">
-                        <label class="form-label text-sm text-uppercase" for="phone2">Phone number </label>
-                        <input class="form-control form-control-lg" type="tel" id="phone2" placeholder="e.g. +02 245354745">
-                      </div>
-                      <div class="col-lg-6">
-                        <label class="form-label text-sm text-uppercase" for="company2">Company name (optional) </label>
-                        <input class="form-control form-control-lg" type="text" id="company2" placeholder="Your company name">
-                      </div>
-                      <div class="col-lg-6 form-group">
-                        <label class="form-label text-sm text-uppercase" for="countryAlt">Country</label>
-                        <select class="country" id="countryAlt" data-customclass="form-control form-control-lg rounded-0">
-                          <option value>Choose your country</option>
-                        </select>
-                      </div>
-                      <div class="col-lg-12">
-                        <label class="form-label text-sm text-uppercase" for="address2">Address line 1 </label>
-                        <input class="form-control form-control-lg" type="text" id="address2" placeholder="House number and street name">
-                      </div>
-                      <div class="col-lg-12">
-                        <label class="form-label text-sm text-uppercase" for="addressalt2">Address line 2 </label>
-                        <input class="form-control form-control-lg" type="text" id="addressalt2" placeholder="Apartment, Suite, Unit, etc (optional)">
-                      </div>
-                      <div class="col-lg-6">
-                        <label class="form-label text-sm text-uppercase" for="city2">Town/City </label>
-                        <input class="form-control form-control-lg" type="text" id="city2">
-                      </div>
-                      <div class="col-lg-6">
-                        <label class="form-label text-sm text-uppercase" for="state2">State/County </label>
-                        <input class="form-control form-control-lg" type="text" id="state2">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-12 form-group">
-                    <button class="btn btn-dark" type="submit">Place order</button>
-                  </div>
+                    
+                                <div class="col-lg-12">
+                                  <input id="form-button" class="btn btn-success btn-block" type="submit" value="Continue">
+                                </div>
                 </div>
               </form>
             </div>
+            <br>
+                        <div class="box-element hidden" id="payment-info">
+                          <small>Paypal Options</small>
+                            <button class="btn btn-success btn-block" id="make-payment">Make payment</button>
+                          </div>
+                          
+                        </div>
+          </div>
             <!-- ORDER SUMMARY-->
             <div class="col-lg-4">
               <div class="card border-0 rounded-0 p-lg-4 bg-light">
@@ -250,47 +168,85 @@
       <script src="{% static 'store/js/cart.js' %}"></script>
 
       <script type="text/javascript">
-          var shipping = '{{order.shipping}}'
-
-          if (shipping == 'False'){
-            document.getElementById('shipping-info').innerHTML = ''
-          }
-
-          var form= document.getElementById('form')
-          form.addEventListener('submit', function(e){
-            e.preventDefault()
-            console.log('Form submitted')
-            document.getElementById('form-button').classList.add("hidden");
-            document.getElementById('payment-info').classList.remove("hidden");
-
-          })
-      </script>
-
-      <script>
-        // ------------------------------------------------------- //
-        //   Inject SVG Sprite - 
-        //   see more here 
-        //   https://css-tricks.com/ajaxing-svg-sprite/
-        // ------------------------------------------------------ //
-        function injectSvgSprite(path) {
-        
-            var ajax = new XMLHttpRequest();
-            ajax.open("GET", path, true);
-            ajax.send();
-            ajax.onload = function(e) {
-            var div = document.createElement("div");
-            div.className = 'd-none';
-            div.innerHTML = ajax.responseText;
-            document.body.insertBefore(div, document.body.childNodes[0]);
-            }
+        var shipping = '{{order.shipping}}'
+        var total = '{{order.get_cart_total|floatformat:2}}'
+    
+        if (shipping == 'False'){
+           document.getElementById('shipping-info').innerHTML = ''
         }
-        // this is set to BootstrapTemple website as you cannot 
-        // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
-        // while using file:// protocol
-        // pls don't forget to change to your domain :)
-        injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg'); 
-        
+
+        if (user != 'AnonymousUser'){
+          document.getElementById('user-info').innerHTML= ''
+        }
+        if (shipping == 'False' && user != 'AnonymousUser'){
+          document.getElementById('form-wrapper').classList.add("hidden")
+          document.getElementById('payment-info').classList.remove("hidden")
+
+        } 
+
+        var form = document.getElementById('form')
+		    form.addEventListener('submit', function(e){
+	    	e.preventDefault()
+	    	console.log('Form Submitted...')
+	    	document.getElementById('form-button').classList.add("hidden");
+	    	document.getElementById('payment-info').classList.remove("hidden");
+	    })
+
+      document.getElementById('make-payment').addEventListener('click', function(e){
+        submitFormData()
+      })
+      function submitFormData(){
+        console.log('Payment button clicked')
+
+        var userFormData = {
+          'name': null,
+          'email': null,
+          'total': total,
+        }
+
+        var shippingInfo = {
+          'address': null,
+          'city': null,
+          'state': null,
+          'zipcode': null,
+        }
+        if (shipping != 'False'){
+	    		shippingInfo.address = form.address.value
+		    	shippingInfo.city = form.city.value
+		    	shippingInfo.state = form.state.value
+		    	shippingInfo.zipcode = form.zipcode.value
+	    	}
+
+	    	if (user == 'AnonymousUser'){
+	    		userFormData.name = form.name.value
+	    		userFormData.email = form.email.value
+	    	}
+
+	  
+        var url = "/process_order/"
+	    	fetch(url, {
+	    		method:'POST',
+	    		headers:{
+	    			'Content-Type':'applicaiton/json',
+	    			'X-CSRFToken':csrftoken,
+	    		}, 
+	    		body:JSON.stringify({'form':userFormData, 'shipping':shippingInfo}),
+	    		
+	    	})
+	    	.then((response) => response.json())
+	    	.then((data) => {
+				console.log('Success:', data);
+				alert('Transaction completed');  
+				window.location.href = "{% url 'home' %}"
+
+				})
+      }
+
       </script>
+
+      
+
+    
       <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     </div>

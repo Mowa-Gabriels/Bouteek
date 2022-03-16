@@ -131,10 +131,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/image')
 
 # paystack documentation
 
-PAYSTACK_SECRET_KEY = 'sk_test_4e5a8dfd64b5223ef41163bfdf227b79c606cd21'
-PAYSTACK_PUBLIC_KEY = 'pk_test_fc930aa15412baaeb174e6f3029f70e8c581dc5a'
-
-
-
-RAVE_PUBLIC_KEY = 'FLWPUBK_TEST-fc885818822b42a04c4a8e7e324977c3-X'
-RAVE_SECRET_KEY = 'FLWSECK_TEST-931beae91f0be1a0ea3a8e72f40c11fa-X'
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)

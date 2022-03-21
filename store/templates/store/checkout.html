@@ -91,7 +91,7 @@
             <br>
                         <div class="box-element hidden" id="payment-info">
                           <small>Paypal Options</small>
-                            <button class="btn btn-success btn-block" id="make-payment">Make payment</button>
+                            <button class="btn btn-success btn-block"  id="make-payment">Make payment</button>
                           </div>
                           
                         </div>
@@ -166,7 +166,7 @@
       <script src="{% static 'store/vendor/choices.js/public/assets/scripts/choices.min.js' %}"></script>
       <script src="{% static 'store/js/front.js' %}"></script>
       <script src="{% static 'store/js/cart.js' %}"></script>
-
+     
       <script type="text/javascript">
         var shipping = '{{order.shipping}}'
         var total = '{{order.get_cart_total|floatformat:2}}'
@@ -237,12 +237,15 @@
 	    	.then((data) => {
 				console.log('Success:', data);
 				alert('Transaction completed');  
+        cart = {}
+        document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/"
 				window.location.href = "{% url 'home' %}"
 
 				})
       }
 
       </script>
+
 
       
 
